@@ -15,6 +15,7 @@ public class BolunenSayilar {
                 sayac++;
             }
         }
+        if(sayac==1) sayac=2;
         ort=toplam/(sayac-1);
         System.out.println("3 ve 4 e bölünebilen sayıların ortalaması  "+ort);
     }
