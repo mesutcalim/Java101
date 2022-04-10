@@ -43,7 +43,7 @@ public class MineSweeper {
         tarla=tarlaBomba;
         for (int i = 0; i < tarla.length; i++) {
             for (int j = 0; j < tarla[i].length; j++) {
-                tarla[i][j] = 'X';
+                tarla[i][j] = '0';
             }
             System.out.println(" ");
         }
@@ -65,7 +65,132 @@ public class MineSweeper {
                 System.out.println(" ");
             }
 
+           for (int i = 0; i < tarla.length; i++) {
+               for (int j = 0; j < tarla[i].length; j++) {
+                   if (tarlaBomba[i][j] == '*') {
+                       if (i + 1 < tarla.length & j + 1 < tarla[i].length) {
+                           if (i == 0 & j > 0) {
+                               for (int n1 = i; n1 <= i + 1; n1++) {
+                                   for (int n2 = j - 1; n2 <= j + 1; n2++) {
+                                       if (n1 == i & n2 == j)
+                                           tarlaBomba[n1][n2] = '*';
+                                       else
+                                           tarlaBomba[n1][n2] += 1;
+                                   }
+                               }
+                           } else if (i > 0 & j == 0) {
+                               for (int n1 = i - 1; n1 <= i + 1; n1++) {
+                                   for (int n2 = j; n2 <= j + 1; n2++) {
+                                       if (n1 == i & n2 == j)
+                                           tarlaBomba[n1][n2] = '*';
+                                       else
+                                           tarlaBomba[n1][n2] += 1;
+                                   }
+                               }
+                           } else if (i == 0 & j == 0) {
+                               for (int n1 = i; n1 <= i + 1; n1++) {
+                                   for (int n2 = j; n2 <= j + 1; n2++) {
+                                       if (n1 == i & n2 == j)
+                                           tarlaBomba[n1][n2] = '*';
+                                       else
+                                           tarlaBomba[n1][n2] += 1;
+                                   }
+                               }
+                           }
+                       }
+                       else if (i + 1 > tarla.length & j + 1 < tarla[i].length)
+                           if (i == 0 & j > 0) {
+                               for (int n1 = i; n1 <= i + 1; n1++) {
+                                   for (int n2 = j - 1; n2 <= j + 1; n2++) {
+                                       if (n1 == i & n2 == j)
+                                           tarlaBomba[n1][n2] = '*';
+                                       else
+                                           tarlaBomba[n1][n2] += 1;
+                                   }
+                               }
+                           } else if (i > 0 & j == 0) {
+                               for (int n1 = i - 1; n1 <= i + 1; n1++) {
+                                   for (int n2 = j; n2 <= j + 1; n2++) {
+                                       if (n1 == i & n2 == j)
+                                           tarlaBomba[n1][n2] = '*';
+                                       else
+                                           tarlaBomba[n1][n2] += 1;
+                                   }
+                               }
+                           } else if (i == 0 & j == 0) {
+                               for (int n1 = i; n1 <= i + 1; n1++) {
+                                   for (int n2 = j; n2 <= j + 1; n2++) {
+                                       if (n1 == i & n2 == j)
+                                           tarlaBomba[n1][n2] = '*';
+                                       else
+                                           tarlaBomba[n1][n2] += 1;
+                                   }
+                               }
+                           }
 
+                       else if (i+1<tarla.length  & j + 1 > tarla[i].length){
+                               if (i == 0 & j > 0) {
+                                   for (int n1 = i; n1 <= i + 1; n1++) {
+                                       for (int n2 = j - 1; n2 <= j + 1; n2++) {
+                                           if (n1 == i & n2 == j)
+                                               tarlaBomba[n1][n2] = '*';
+                                           else
+                                               tarlaBomba[n1][n2] += 1;
+                                       }
+                                   }
+                               } else if (i > 0 & j == 0) {
+                                   for (int n1 = i - 1; n1 <= i + 1; n1++) {
+                                       for (int n2 = j; n2 <= j + 1; n2++) {
+                                           if (n1 == i & n2 == j)
+                                               tarlaBomba[n1][n2] = '*';
+                                           else
+                                               tarlaBomba[n1][n2] += 1;
+                                       }
+                                   }
+                               } else if (i == 0 & j == 0) {
+                                   for (int n1 = i; n1 <= i + 1; n1++) {
+                                       for (int n2 = j; n2 <= j + 1; n2++) {
+                                           if (n1 == i & n2 == j)
+                                               tarlaBomba[n1][n2] = '*';
+                                           else
+                                               tarlaBomba[n1][n2] += 1;
+                                       }
+                                   }
+                               }
+                       }
+                       else if (j + 1 > tarla[i].length & i+1 > tarla.length){
+                               if (i == 0 & j > 0) {
+                                   for (int n1 = i; n1 <= i + 1; n1++) {
+                                       for (int n2 = j - 1; n2 <= j + 1; n2++) {
+                                           if (n1 == i & n2 == j)
+                                               tarlaBomba[n1][n2] = '*';
+                                           else
+                                               tarlaBomba[n1][n2] += 1;
+                                       }
+                                   }
+                               } else if (i > 0 & j == 0) {
+                                   for (int n1 = i - 1; n1 <= i + 1; n1++) {
+                                       for (int n2 = j; n2 <= j + 1; n2++) {
+                                           if (n1 == i & n2 == j)
+                                               tarlaBomba[n1][n2] = '*';
+                                           else
+                                               tarlaBomba[n1][n2] += 1;
+                                       }
+                                   }
+                               } else if (i == 0 & j == 0) {
+                                   for (int n1 = i; n1 <= i + 1; n1++) {
+                                       for (int n2 = j; n2 <= j + 1; n2++) {
+                                           if (n1 == i & n2 == j)
+                                               tarlaBomba[n1][n2] = '*';
+                                           else
+                                               tarlaBomba[n1][n2] += 1;
+                                       }
+                                   }
+                               }
+                       }
+                   }
+               }
+           }
         TarlaBastir(tarla, a, b,tarlaAcik);
             do {
                 System.out.print("Satır Sayısı Giriniz: ");
@@ -78,4 +203,4 @@ public class MineSweeper {
 
 
         }
-    }
+}
