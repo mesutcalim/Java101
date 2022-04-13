@@ -17,17 +17,21 @@ public class MineSweeper {
         }
     }
 
-    public static void OpenChar(int c, int d, char tarla[][],char[][] tarlaAcik) {
+    public static int OpenChar(int c, int d, char tarla[][],char[][] tarlaAcik,int sayac) {
+
         for (int i = 0; i < tarla.length; i++) {
             for (int j = 0; j < tarla[i].length; j++) {
-                if(c==i & d==j) {
+                if (c == i & d == j) {
                     tarlaAcik[i][j] = tarla[i][j];
                 }
-                    System.out.print(tarlaAcik[i][j] + " ");
-                }
+                System.out.print(tarlaAcik[i][j] + " ");
+            }
             System.out.println(" ");
-        }}
-       public static void oyna() {
+
+        }
+        return sayac;
+    }
+    public static void oyna() {
         int c,d;
 
         Scanner input = new Scanner(System.in);
@@ -49,6 +53,8 @@ public class MineSweeper {
         }
 
         int bombaSayisi = (a * b) / 4;
+        int sure= (a*b)-((a*b)/4);
+        int sayac=0;
         for (int i = 0; i < bombaSayisi; i++) {
             int k = rastgele.nextInt(a);
             int l = rastgele.nextInt(b);
@@ -197,10 +203,14 @@ public class MineSweeper {
                 c = input.nextInt();
                 System.out.print("Sutun Sayısını Giriniz: ");
                 d = input.nextInt();
-                OpenChar(c, d, tarla,tarlaAcik);
+                OpenChar(c, d, tarla,tarlaAcik,sayac);
+                sayac++;
+
             }
-            while (tarlaAcik[c][d] != '*');
-
-
+            while (tarlaAcik[c][d] != '*' & sure>sayac);
+           if(tarlaAcik[c][d] == '*')
+            System.out.println("Mayına bastınız.");
+            if(sure==sayac)
+                System.out.println("Kazandınz");
         }
 }
