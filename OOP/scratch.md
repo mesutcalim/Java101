@@ -1,0 +1,1 @@
+![Üniversite Yönetimi Diyagramı](C:\Users\mesut.calim\Desktop\Unıversıte_yon_sıst.drawio.png)
